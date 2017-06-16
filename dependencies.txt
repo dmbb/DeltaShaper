@@ -1,0 +1,102 @@
+This file contains the dependencies to be installed in order to set up DeltaShaper pipelines.
+#The prototype is tested under Linux Ubuntu 14.04 LTS (Server Edition)
+
+#########################################################
+#Required for installing on a vanilla 14.04 server
+#########################################################
+sudo apt-get install build-essential
+sudo apt-get install python-gobject
+sudo apt-get install python-dbus
+sudo apt-get install dbus-x11
+
+
+#########################################################
+#Skype
+#########################################################
+sudo apt-get update && sudo apt-get upgrade
+sudo dpkg --add-architecture i386
+sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
+sudo apt-get update && sudo apt-get install skype
+
+
+#########################################################
+#V4L2Loopback
+#########################################################
+git clone https://github.com/umlaeute/v4l2loopback.git
+cd v4l2loopback/
+sudo make
+sudo make install
+
+sudo apt-get install linux-generic
+sudo apt-get install v4l2loopback-dkms
+
+
+#########################################################
+#LibNetfilterQueue
+#########################################################
+sudo apt-get install libnetfilter-queue-dev
+
+
+#########################################################
+#Python dependencies (We are using Python 2.7)
+#########################################################
+sudo apt-get install python-dev
+sudo apt-get install python-pip
+sudo pip install numpy
+sudo pip install Skype4Py
+sudo pip install dpkt
+sudo pip install pyemd
+sudo pip install netifaces
+
+
+#########################################################
+#GStreamer video pipeline
+#########################################################
+sudo apt-get install libgstreamer1.0-dev
+sudo apt-get install gstreamer1.0-tools
+sudo apt-get install gstreamer1.0-plugins-bad
+sudo apt-get install gstreamer1.0-plugins-good
+sudo apt-get install gstreamer1.0-libav
+sudo apt-get install gstreamer-tools
+
+#########################################################
+#ffmpeg video pipeline
+#########################################################
+sudo add-apt-repository ppa:mc3man/trusty-media 
+sudo apt-get update
+sudo apt-get install ffmpeg
+
+
+#########################################################
+#Snowmix video mixer
+#########################################################
+wget http://freefr.dl.sourceforge.net/project/snowmix/Snowmix-0.5.1.tar.gz
+tar -xzvf Snowmix-0.5.1.tar.gz
+cd Snowmix-0.5.1
+./bootstrap
+make
+export SNOWMIX=/usr/local/lib/Snowmix-0.5.1
+make
+sudo make install
+cd ..
+
+
+#########################################################
+#Image Processing - LibPNG++, OpenCV
+#########################################################
+sudo apt-get install libpng-dev
+sudo apt-get install libpng++-dev
+git clone https://github.com/jayrambhia/Install-OpenCV.git
+cd Ubuntu
+chmod +x *
+./opencv_latest.sh
+
+
+#########################################################
+#Desktop automation + Virtual display
+#########################################################
+sudo apt-get install xdotool
+sudo apt-get install xvfb
+
+
+
