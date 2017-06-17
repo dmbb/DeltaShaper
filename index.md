@@ -16,7 +16,7 @@ In practice, the images encoding network data (_payload frames_) are overlapped 
 <img src="http://web.ist.utl.pt/diogo.barradas/papers/figures/covert_frame.png" width="500">
  
 
-## Adaptation Mechanism
+# Adaptation Mechanism
 
 Although a given data encoding scheme can work properly in a given network condition, censors may attempt to perturb the network conditions in which Skype calls take place in an attempt to identify DeltaShaper streams.
 
