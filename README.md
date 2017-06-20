@@ -69,7 +69,7 @@ To avoid hampering the screen area when running DeltaShaper on a conventional de
 
 1. Start the video camera device in /dev/video0: just `sudo modprobe v4l2loopback`
 2. Start the virtual display and run Skype: run `Utilities/bgSkype.sh`
-3. Login and configure Skype options(through our scripts in a headless machine, otherwise you can just use a VNC connector): compile and run the scripts on `DeltaShaper/SkypeAutomation` as user interactions are prompted by Skype. Skype options must be set so that video starts automatically when a call starts; the server node should be set up to answer calls automatically; user should be configured to perform auto sign-in. Note that running `rm -rf ~/.Skype` allows you to restart a Skype initial configuration from scratch.
+3. Login and configure Skype options(through our scripts in a headless machine, otherwise you can just use a VNC connector): compile and run the scripts on `DeltaShaper/SkypeAutomation` as user interactions are prompted by Skype. Skype options must be set so that video starts automatically when a call starts; the server node should be set up _not_ to answer calls automatically; user should be configured to perform auto sign-in. Note that running `rm -rf ~/.Skype` allows you to restart a Skype initial configuration from scratch.
 
 
 ----
